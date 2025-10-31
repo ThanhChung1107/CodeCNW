@@ -79,4 +79,14 @@ class M_Student {
         $sql = "delete from sinhvien";
         return mysqli_query($link,$sql);
     }
+    public function checkStudentExists($id){
+        $link = mysqli_connect("localhost","root","") or die("Không thể kết nối");
+        mysqli_select_db($link,"DULIEU");
+        mysqli_set_charset($link,"utf8");
+        $sql = "SELECT COUNT(*) as count FROM sinhvien WHERE IDSV = '$id'";
+        $result = mysqli_query($link,$sql);
+        $row = mysqli_fetch_assoc($result);
+        mysqli_close($link);
+        return $row['count'] > 0;
+    }
 }

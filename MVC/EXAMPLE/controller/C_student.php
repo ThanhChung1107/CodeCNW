@@ -6,6 +6,15 @@ class C_student {
     public function invoke() {
         $studentModel = new M_Student();
 
+        // ===== API KIỂM TRA MÃ SV TỒN TẠI =====
+        if (isset($_GET['check_id'])) {
+            header('Content-Type: application/json');
+            $id = $_GET['check_id'] ?? '';
+            $exists = $studentModel->checkStudentExists($id);
+            echo json_encode(['exists' => $exists]);
+            exit;
+        }
+
         // 1) Thêm sinh viên (mod1=1)
         if (isset($_GET['mod1']) && $_GET['mod1'] == '1') {
             if ($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -46,10 +55,12 @@ class C_student {
                 return;
             }
         }
+
+        // 3) Xóa sinh viên (mod3=1)
         if (isset($_GET['mod3']) && $_GET['mod3'] == '1') {
             if (isset($_GET['stid'])) {
                 $studentModel->deleteStudent($_GET['stid']);
-                header("Location: C_Student.php"); // quay về danh sách sau khi xóa
+                header("Location: C_Student.php");
                 exit;
             } else {
                 $students = $studentModel->getAllStudents();
@@ -64,14 +75,15 @@ class C_student {
             header("Location: C_Student.php");
             exit;
         }
-        // 3) Xem chi tiết nếu request có stid và không phải mod2 (chi tiết)
+
+        // 5) Xem chi tiết nếu request có stid và không phải mod2
         if (isset($_GET['stid']) && !isset($_GET['mod2'])) {
             $student = $studentModel->getStudentDetail($_GET['stid']);
             include_once(__DIR__ . '/../view/studentdetail.php');
             return;
         }
 
-        // 4) Mặc định: hiển thị danh sách
+        // 6) Mặc định: hiển thị danh sách
         $students = $studentModel->getAllStudents();
         include_once(__DIR__ . '/../view/studentlist.php');
     }
@@ -79,3 +91,4 @@ class C_student {
 
 $controller = new C_student();
 $controller->invoke();
+?>
