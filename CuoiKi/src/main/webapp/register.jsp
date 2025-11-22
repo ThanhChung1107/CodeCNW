@@ -10,8 +10,8 @@
         .form-group { margin-bottom: 15px; }
         label { display: block; margin-bottom: 5px; }
         input[type="text"], input[type="password"], select { width: 100%; padding: 8px; }
-        input[type="submit"] { background: #4CAF50; color: white; padding: 10px; border: none; cursor: pointer; width: 100%; }
-        .error { color: red; margin-bottom: 15px; }
+        input[type="submit"] { background: white; color: black; padding: 10px; border: none; cursor: pointer; width: 100%; }
+        .error { margin-bottom: 15px; }
         .links { text-align: center; margin-top: 15px; }
     </style>
 </head>

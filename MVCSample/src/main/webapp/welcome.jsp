@@ -49,10 +49,8 @@
         <h1>Welcome to Student Manager</h1>
 
         <div class="menu">
-            <a href="student-list.jsp" class="button">Xem thông tin sinh viên</a>
-            <a href="student-add.jsp" class="button">Thêm sinh viên</a>
-            <a href="student-edit.jsp" class="button">Sửa thông tin sinh viên</a>
-            <a href="student-delete.jsp" class="button">Xóa sinh viên</a>
+            <a href="student-list" class="button">Xem thông tin sinh viên</a>
+            <a href="add-student" class="button">Thêm sinh viên</a>
         </div>
     </div>
 </body>

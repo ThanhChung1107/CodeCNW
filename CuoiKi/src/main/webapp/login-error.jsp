@@ -19,14 +19,9 @@
             margin: 10px auto; 
             width: 200px; 
             padding: 10px; 
-            background: #4CAF50; 
-            color: white; 
             text-decoration: none; 
             border-radius: 5px;
         }
-        .btn:hover { background: #45a049; }
-        .btn-danger { background: #f44336; }
-        .btn-danger:hover { background: #d7352c; }
     </style>
 </head>
 <body>

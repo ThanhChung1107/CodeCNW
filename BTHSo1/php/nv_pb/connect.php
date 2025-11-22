@@ -1,11 +1,13 @@
 <?php
-$host = "localhost";  // thường là localhost
-$user = "root";       // username mặc định XAMPP
-$pass = "";           // password mặc định trống
+$host = "localhost";
+$user = "root";
+$pass = ""; // <-- THAY THẾ bằng mật khẩu thực tế của bạn
 $dbname = "DULIEU";
+$port = 3307; // <-- THÊM CỔNG 3307
 
 // Kết nối
-$conn = new mysqli($host, $user, $pass, $dbname);
+// Thêm $port vào tham số cuối cùng
+$conn = new mysqli($host, $user, $pass, $dbname, $port); 
 
 // Kiểm tra kết nối
 if ($conn->connect_error) {

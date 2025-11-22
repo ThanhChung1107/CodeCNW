@@ -15,12 +15,11 @@
         body { font-family: Arial, sans-serif; margin: 20px; }
         .header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
         .welcome { font-size: 18px; font-weight: bold; }
-        .search-form { margin: 20px 0; padding: 15px; background: #f9f9f9; border: 1px solid #ddd; }
+        .search-form { margin: 20px 0; padding: 15px;  border: 1px solid #ddd; }
         table { width: 100%; border-collapse: collapse; margin-top: 20px; }
         th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
-        th { background-color: #f2f2f2; }
-        .btn { background: #4CAF50; color: white; padding: 5px 10px; text-decoration: none; border: none; cursor: pointer; }
-        .delete-btn { background: #f44336; }
+        .btn { background: white; color: black; padding: 5px 10px; text-decoration: none; border: none; cursor: pointer; }
+        .delete-btn {}
         .logout-btn { background: #ff9800; }
         .no-result { text-align: center; color: #666; font-style: italic; margin: 20px 0; }
     </style>
@@ -30,7 +29,7 @@
         <h1>Search Users</h1>
         <div>
             <span class="welcome">Welcome, <%= currentUser.getLastname() %></span>
-            <a href="logout" class="btn logout-btn" style="margin-left: 15px;">Logout</a>
+            <a href="logout" style="margin-left: 15px;">Logout</a>
         </div>
     </div>
 
